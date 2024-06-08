@@ -6,18 +6,53 @@ body {
     flex-direction: column;
     height: 100vh;
 }
-.container .btn-menu{
+
+.container {
+
+    display: flex;
+    flex-direction: row;
     float: left;
     line-height: 50px;
+    width: 100%;
+}
+
+.btn-menu{
+    float: left;
+    line-height: 50px;
+    
 }
 .container .btn-menu label{
-    font-size: 28px;
+    font-size: 4em;
     color: #003C43;
     cursor: pointer;
 }
 #btn-menu{
     display: none;
 }
+
+.menu-botones { 
+    padding-top: 1%;
+    padding-left: 10%;
+} 
+
+.boton {
+    background-color: white;
+    border-radius: 10px;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 700;
+    border: 1px solid #000000;
+    padding: 20px 80px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .fondo-negro {
+    background-color: rgb(59, 59, 59); 
+    color: white; 
+  }
+  
 .container-menu{
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
@@ -137,4 +172,52 @@ body {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
+}
+
+.container-inventoryofitems {
+    padding: 0% 5% 5% 10%;
+    
+}
+
+#itemsofinventory {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid #ccc;
+}
+
+.item-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: calc(32.333% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.item-card.selected {
+    background-color: #add8e6; 
+}
+
+.item-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.item-card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.item-card .item-quantity {
+    font-weight: bold;
+    color: #007BFF;
 }
