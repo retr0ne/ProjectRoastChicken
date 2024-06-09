@@ -7,13 +7,9 @@ body {
     height: 100vh;
 }
 
-.container {
-
-    display: flex;
-    flex-direction: row;
+.container .btn-menu {
     float: left;
     line-height: 50px;
-    width: 100%;
 }
 
 .btn-menu{
@@ -22,7 +18,7 @@ body {
     
 }
 .container .btn-menu label{
-    font-size: 4em;
+    font-size: 3em;
     color: #003C43;
     cursor: pointer;
 }
@@ -30,12 +26,8 @@ body {
     display: none;
 }
 
-.menu-botones { 
-    padding-top: 1%;
-    padding-left: 10%;
-} 
 
-.boton {
+.boton { /* Deje esta clase boton por si alguien necesita una configuracion */
     background-color: white;
     border-radius: 10px;
     color: #000;
