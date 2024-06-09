@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roast Chicken</title>
+    <link rel="stylesheet" href="css/cash.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="src/icon.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <header>
+    <div class="container">
+        <div class="btn-menu">
+            <label for="btn-menu" class="icon-menu"></label>
+            <img src="src/logo.png" alt="">
+        </div>
+    </div>
+        
+    </header>
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="index.html"><label for="" class="icon-basket"></label>Venta</a>
+                <a href="pedido.html"><label for="" class="icon-doc-text"></label>Pedido</a>
+                <a href="registro.html"><label for="" class="icon-box"></label>Registro</a>
+                <a href="#"><label for="" class="icon-suitcase"></label>Cerrar caja</a>
+                <a href="#"><label for="" class="icon-logout"></label>Cerrar sesión</a>
+            </nav>
+            <label for="btn-menu" class="icon-cancel"></label>
+        </div>
+    </div>
+    <main class="main-content-pedido">
+        <table id="orders-table">
+            <thead>
+                <tr>
+                    <th>Nro. de Pedido</th>
+                    <th>Valor</th>
+                    <th>Mesa</th>
+                    <th>Estado</th>
+                    <th>Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los pedidos se generarán dinámicamente aquí -->
+            </tbody>
+        </table>
+    </main>
+    <div id="confirmation-modal" class="modal-pedido">
+        <div class="modal-content">
+            <p>¿Estás seguro que quieres cambiar el estado a PAGADO?</p>
+            <button id="confirm-btn">Confirmar</button>
+            <button id="cancel-btn">Atrás</button>
+        </div>
+    </div>
+    <script src="Scripts/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</body>
+</html>

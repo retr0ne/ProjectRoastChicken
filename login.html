@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styleslogin.css">
+    <link rel="icon" href="src/icon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-image">
+                <img src="src/logo.png" alt="Login Image">
+            </div>
+            <form id="login-form">
+                <div class="login-field">
+                    <input type="text" id="username" placeholder="Nombre de usuario" required>
+                </div>
+                <div class="login-field">
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <div class="login-button">
+                    <button type="submit">Iniciar sesión</button>
+                </div>
+            </form>
+            <div id="login-error" class="login-error"></div>
+        </div>
+    </div>
+    <script src="Scripts/loginscript.js"></script>
+</body>
+</html>
