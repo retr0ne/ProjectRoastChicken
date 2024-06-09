@@ -72,3 +72,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5000);
 });
 
+<<<<<<< Updated upstream
+=======
+const botones = document.querySelectorAll(".boton");
+
+//Codigo de prueba para el cambio de style de los botones.
+
+botones.forEach(boton => {
+  boton.addEventListener("click", () => {
+    boton.classList.add("fondo-negro"); 
+
+    botones.forEach(otroBoton => {
+      if (otroBoton !== boton) {
+        otroBoton.classList.remove("fondo-negro");
+        console.log("Hola mundo"); 
+      }
+    });
+  });
+});
+
+let selectedProducts = [];
+let productCounter = 0;
+
+function updateProductCounter(change) {
+  productCounter += change;
+  if (productCounter < 0) productCounter = 0;
+  document.getElementById('product-counter').textContent = productCounter;
+}
+
+function toggleProductSelection(itemCard, product) {
+  const productName = product.name;
+
+  if (itemCard.classList.contains('selected')) {
+    itemCard.classList.remove('selected');
+    selectedProducts = selectedProducts.filter(p => p.name !== productName);
+    updateProductCounter(-1);
+  } else {
+    itemCard.classList.add('selected');
+    selectedProducts.push(product);
+    updateProductCounter(1);
+  }
+}
+>>>>>>> Stashed changes
