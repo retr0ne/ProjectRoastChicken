@@ -1,10 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.main-content {
+    min-height: 570px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .container .btn-menu {
@@ -18,6 +27,7 @@ body {
     display: flex;
 }
 .container .btn-menu .icon-menu{
+    margin-left: 30px;
     margin-top: 25px;
     color: #1c1c1c;
     cursor: pointer;
@@ -27,7 +37,7 @@ body {
     top: 0;
     height: 100px;
     width: 812px;
-    margin-left: 220px;
+    margin-left: 190px;
 }
 #btn-menu{
     display: none;
@@ -257,77 +267,3 @@ body {
     cursor: pointer;
 }
 
-
-.main-content-pedido {
-    display: flex;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    
-}
-
-table {
-    width: 150%;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-thead th {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-tbody td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.icon-server{
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.modal-pedido {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
-    border-radius: 6px;
-    text-align: center;
-}
-
-.modal-content button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #1c1c1c;
-    color: white;
-    border-radius: 5px;
-}
-.modal-content button:hover{
-    background-color: #0f0f0f; /* Color de fondo al hacer clic */
-    transform: scale(0.95); /* Efecto de reducción al hacer clic */
-}

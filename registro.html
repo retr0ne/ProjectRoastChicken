@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Facturas</title>
+    <link rel="stylesheet" href="css/stylesregistro.css">
+    <link rel="stylesheet" href="css/cash.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu" class="icon-menu"></label>
+                <img src="src/logo.png" alt="">
+            </div>
+        </div>
+        </header>
+        <input type="checkbox" id="btn-menu">
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="index.html"><label for="" class="icon-basket"></label>Venta</a>
+                    <a href="pedido.html"><label for="" class="icon-doc-text"></label>Pedido</a>
+                    <a href="registro.html"><label for="" class="icon-box"></label>Registro</a>
+                    <a href="#"><label for="" class="icon-suitcase"></label>Cerrar caja</a>
+                    <a href="login.html"><label for="" class="icon-logout"></label>Cerrar sesión</a>
+                </nav>
+                <label for="btn-menu" class="icon-cancel"></label>
+            </div>
+        </div>
+    <main>
+        <table id="orders-table">
+            <thead>
+                <tr>
+                    <th>Nro. de Factura</th>
+                    <th>Valor</th>
+                    <th>Fecha</th>
+                    <th>Cajero</th>
+                    <th>Ver factura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los registros se generarán dinámicamente aquí -->
+            </tbody>
+        </table>
+    </main>
+    <script src="Scripts/registroscript.js"></script>
+</body>
+</html>

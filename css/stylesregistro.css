@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+main {
+    min-height: 570px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.view-invoice {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container .btn-menu {
+    float: left;
+    line-height: 50px;
+}
+
+.btn-menu{
+    float: left;
+    line-height: 50px;
+    display: flex;
+}
+.container .btn-menu .icon-menu{
+    margin-left: 25px;
+    margin-top: 25px;
+    color: #1c1c1c;
+    cursor: pointer;
+    font-size: 2.5em;
+}
+.container .btn-menu img{
+    top: 0;
+    height: 100px;
+    width: 812px;
+    margin-left: 220px;
+}
+#btn-menu{
+    display: none;
+}
+
+
+.boton { /* Deje esta clase boton por si alguien necesita una configuracion */
+    background-color: white;
+    border-radius: 10px;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 700;
+    border: 1px solid #000000;
+    padding: 20px 80px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .fondo-negro {
+    background-color: rgb(59, 59, 59); 
+    color: white; 
+  }
+  
+.container-menu{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu{
+    width: 100%;
+    max-width: 250px;
+    height: 100vh;
+    background: #1c1c1c;
+    position: relative;
+    transition: all 500ms ease;
+    z-index: 1000;
+}
+.cont-menu nav{
+    transform: translateY(15%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #f5f5dc;
+    border-left: 5px solid transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 500ms ease;
+}
+.cont-menu nav a:hover{
+    background-color: #1f1f1f;
+    border-left: 5px solid #f5f5dc;
+}
+.cont-menu label{
+    color: #f5f5dc;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.cont-menu .icon-cancel{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #f5f5dc;
+    cursor: pointer;
+    font-size: 1.5em;
+}
