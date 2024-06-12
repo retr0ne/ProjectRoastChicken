@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roast Chicken</title>
     <link rel="stylesheet" href="css/cash.css">
     <link rel="stylesheet" href="css/styles.css">
-
     <link rel="icon" href="src/icon.png" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
     <header>
-    <div class="container">
-        <div class="btn-menu">
-            <label for="btn-menu" class="icon-menu"></label>
-            <img src="src/logo.png" alt="">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu" class="icon-menu"></label>
+                <img src="src/logo.png" alt="">
+            </div>
         </div>
-    </div>
-        
     </header>
+
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
         <div class="cont-menu">
@@ -35,34 +34,61 @@
         </div>
     </div>
     <main class="main-content">
-
         <div class="container-inventoryofitems">
-            <div id="itemsofinventory">
-               
-            </div>
-          </div>
+            <div id="itemsofinventory"></div>
+        </div>
         <div id="product-grid" class="product-grid">
             <!-- Las tarjetas de productos se generarán aquí -->
-       </div>
-       
+        </div>
     </main>
     <footer>
         <div class="container-footer">
             <p>Productos agregados: <span id="product-counter">0</span></p>
-            <button id="facturar-venta">FACTURAR VENTA</button>
-            </div>
+            <button id="facturar-venta" class="btn btn-success">FACTURAR VENTA</button>
         </div>
     </footer>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal()">&times;</span>
-            <div id="modal-body">
-                <!-- El contenido del modal se generará dinámicamente -->
+
+    <!-- Modal para la facturación de la venta -->
+    <div id="facturar-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="facturarModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="facturarModalLabel">Facturación de Venta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6>Productos Seleccionados:</h6>
+                    <ul id="selected-products-list" class="list-group mb-3"></ul>
+                    <div class="form-group">
+                        <label for="mesa-select">Seleccionar Mesa:</label>
+                        <select class="form-control" id="mesa-select">
+                            <option value="1">Mesa 1</option>
+                            <option value="2">Mesa 2</option>
+                            <option value="3">Mesa 3</option>
+                            <option value="4">Mesa 4</option>
+                            <option value="5">Mesa 5</option>
+                            <option value="6">Mesa 6</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario-label">Trabajador:</label>
+                        <p id="usuario-label">Nombre del Trabajador</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="confirmar-venta-btn" class="btn btn-primary">Confirmar Venta</button>
+                </div>
             </div>
-            <button id="generate-pdf" onclick="generatePDF()">Generar Factura</button>
         </div>
     </div>
+
     <script src="Scripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
