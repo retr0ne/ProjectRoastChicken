@@ -1,27 +1,26 @@
 <?php
 session_start();
-include 'db_connection.php'; 
+include 'conection.php'; 
+$objeto = new Conexion();
+$conn = $objeto->Conectar();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $username = $_POST['cedula'];
     $password = $_POST['password'];
 
     // Consulta para verificar el usuario
-    $stmt = $conn->prepare("SELECT cedula, contrasena FROM usuario WHERE cedula = ? AND contrasena = ?");
-    $stmt->bind_param("ss", $username, $password);
+    $stmt = $conn->prepare("SELECT cedula, contrasena, usuario FROM usuario WHERE cedula = '$username' AND contrasena = '$password'");
     $stmt->execute();
-    $result = $stmt->get_result();
     
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['nombre_usuario'];
-        echo json_encode(['status' => 'success', 'username' => $user['nombre_usuario']]);
+    if ($stmt->rowCount() > 0) {
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['user_id'] = $user['usuario'];
+        $_SESSION['cedula'] = $user['cedula'];
+        echo json_encode(['status' => 'success', 'cedula' => $user['cedula']]);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Usuario o contraseña incorrectos']);
     }
     
-    $stmt->close();
-    $conn->close();
+    $conn=null;
 }
 ?>

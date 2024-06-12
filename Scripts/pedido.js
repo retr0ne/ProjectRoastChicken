@@ -1,13 +1,19 @@
 const modifyIcon = document.getElementById("modify");
 
 $(document).ready(function(){
-  tabla = $("orders-table").DataTable({
-    "columnDefs":[{
-      "targets": -1,
-    "data": null,
-    "defaulContent": "<span id='modify' class='modify-icon'><label for='' class='icon-server'></label></span>",
-    }],
+  tabla = $("#orders-table").DataTable({
+      columnDefs:[{
+      targets: -1,
+      render: function (data, type, row) {
+        return '<span id="modify" class="modify-icon"><label for="" class="icon-server"></label></span>'
+      }
+    }]
   });
+
+  $('#orders-table').on('click', '.edit-button', function() {
+    var data = tabla.row($(this).parents('tr')).data();
+    alert("You clicked the button for Order #" + data[0]); // Assuming data[0] is the order number
+});
 })
 
 $(document).on("click", ".modify-icon", function(){
@@ -21,22 +27,19 @@ $(document).on("click", ".modify-icon", function(){
       type: "POST",
       dataType: "json",
       data: {opcion:opcion, id:id},
-      success: function(){
+      success: function(response){ 
+        console.log("Respuesta del servidor:", response);
         alert("Se ha actualizado el pedido " + id + " con exito");
-        renderInventory();
-      }
+        tabla.row(fila.parents('tr')).remove().draw(); 
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.error("Error en la solicitud AJAX:", textStatus, errorThrown);
+    }
   });
   }
 } )
 
-function renderInventory() {
-  itemsOfInventory.innerHTML = ''; // Limpiar el contenido existente
 
-  inventoryData.forEach(item => {
-      const itemCard = createItemCard(item);
-      itemsOfInventory.appendChild(itemCard);
-  });
-}
 
 /*modifyIcon.addEventListener("click", () =>{
   //showConfirmationModal()

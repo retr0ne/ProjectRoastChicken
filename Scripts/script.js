@@ -6,25 +6,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const confirmarVentaBtn = document.getElementById('confirmar-venta-btn');
 
   const inventoryData = [
-      { name: 'Item 1', price: '10.000', quantity: 5 },
-      { name: 'Item 2', price: '15.000', quantity: 0 },
-      { name: 'Item 3', price: '20.000', quantity: 3 },
-      { name: 'Item 4', price: '20.000', quantity: 30 },
-      { name: 'Item 5', price: '25.000', quantity: 40 },
-      { name: 'Item 6', price: '30.000', quantity: 50 },
-      { name: 'Item 7', price: '35.000', quantity: 60 },
-      { name: 'Item 8', price: '40.000', quantity: 70 },
-      { name: 'Item 9', price: '45.000', quantity: 80 },
-      { name: 'Item 10', price: '50.000', quantity: 90 },
-      { name: 'Item 11', price: '55.000', quantity: 100 },
-      { name: 'Item 12', price: '60.000', quantity: 110 },
-      { name: 'Item 13', price: '70.000', quantity: 120 },
-      { name: 'Item 14', price: '75.000', quantity: 130 },
-      { name: 'Item 15', price: '80.000', quantity: 140 },
-      { name: 'Item 16', price: '85.000', quantity: 150 },
-      { name: 'Item 17', price: '90.000', quantity: 160 },
-      { name: 'Item 18', price: '95.000', quantity: 170 },
-      { name: 'Item 19', price: '100.000', quantity: 180 }
+      { name: 'Cuarto de Pollo asado', price: '10.000', quantity: 5 },
+      { name: 'Medio Pollo asado', price: '15.000', quantity: 0 },
+      { name: 'Pollo asado', price: '20.000', quantity: 3 },
+      { name: 'Arroz con pollo', price: '20.000', quantity: 30 },
+      { name: 'Cuarto de pollo broaster', price: '25.000', quantity: 40 },
+      { name: 'Medio pollo broaster', price: '30.000', quantity: 50 },
+      { name: 'Pollo broaster', price: '35.000', quantity: 60 },
+      { name: 'Ajiaco', price: '40.000', quantity: 70 },
+      { name: 'Bandeja paisa', price: '45.000', quantity: 80 },
+      { name: 'Croquetas de pollo', price: '50.000', quantity: 90 },
+      { name: 'Lasana RoastChicken', price: '55.000', quantity: 100 },
+      { name: 'Gaseosa Personal', price: '3.000', quantity: 110 },
+      { name: 'Gaseosa 2L', price: '5.000', quantity: 120 },
+      { name: 'Gaseosa 3L', price: '7.000', quantity: 130 },
+      { name: 'Brasas sagradas', price: '80.000', quantity: 140 },
+      { name: 'Alitas al vapor + gaseosa', price: '85.000', quantity: 150 },
+      { name: 'Combo Familiar', price: '90.000', quantity: 160 },
+      { name: 'Mr Roast Combo', price: '95.000', quantity: 170 },
+      { name: 'ComboMax Chicken', price: '100.000', quantity: 180 }
   ];
 
   let contadorDeProductos = 0;
@@ -144,6 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   renderInventory();
+
+  $(document).on("click", "#caja", function(){
+    alert("Caja Cerrada");
+})
 
   facturarVentaBtn.addEventListener('click', showFacturarModal);
   confirmarVentaBtn.addEventListener('click', confirmVenta);

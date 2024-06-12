@@ -23,7 +23,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     const cedula = document.getElementById('cedula').value;
     const password = document.getElementById('password').value;
 
-    fetch('login.php', {
+    fetch('database/login.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `cedula=${cedula}&password=${password}`
