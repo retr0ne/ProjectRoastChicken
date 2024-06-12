@@ -5,7 +5,7 @@ $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
 try {
-    $consulta = "SELECT id, total, mesa, estado FROM pedido";
+    $consulta = "SELECT id, total, mesa, estado FROM pedido WHERE estado='P'";
     $stmt = $conexion->prepare($consulta);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -63,13 +63,7 @@ try {
             <label for="btn-menu" class="icon-cancel"></label>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <button id="botonNuevo"></button>
-            </div>
-        </div>
-    </div>
+   
     <main class="main-content-pedido">
         <table id="orders-table">
             <thead>
@@ -102,6 +96,7 @@ try {
             </tbody>
         </table>
     </main>
+    <div></div>
     <div id="confirmation-modal" class="modal-pedido">
         <div class="modal-content">
             <p>¿Estás seguro que quieres cambiar el estado a PAGADO?</p>
@@ -109,7 +104,7 @@ try {
             <button id="cancel-btn">Atrás</button>
         </div>
     </div>
-    <script src="Scripts/script.js"></script>
+    <script src="Scripts/pedido.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </body>
 </html>

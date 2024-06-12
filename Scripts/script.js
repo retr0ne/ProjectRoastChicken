@@ -148,3 +148,4 @@ document.addEventListener('DOMContentLoaded', function() {
   facturarVentaBtn.addEventListener('click', showFacturarModal);
   confirmarVentaBtn.addEventListener('click', confirmVenta);
 });
+
